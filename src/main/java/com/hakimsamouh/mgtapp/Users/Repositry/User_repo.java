@@ -12,8 +12,8 @@ import jakarta.persistence.LockModeType;
 @Repository
 public interface  User_repo extends JpaRepository<User, Long>{
 @Lock(LockModeType.OPTIMISTIC_FORCE_INCREMENT) Optional<User> findWithLockingById(Long id); 
-//al method en jpa  en this interface
-//@Query("SELECT e FROM User e WHERE s.email=?1")
+//al method en jpa  en this interface 
+
 Optional <User> findUserByEmail(String email);
 
 }
