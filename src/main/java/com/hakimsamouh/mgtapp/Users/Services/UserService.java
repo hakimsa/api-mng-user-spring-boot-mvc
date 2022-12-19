@@ -37,7 +37,7 @@ public class UserService {
         }
         return user_repo.findById(idUser);
     }
-
+    @Transactional
     public void addNewUser(User user) {
 
         Optional<User> userEmail = user_repo.findUserByEmail(user.getEmail());
