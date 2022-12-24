@@ -1,16 +1,12 @@
 package com.hakimsamouh.mgtapp.Users.Services;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.hakimsamouh.mgtapp.Users.Models.User;
 import com.hakimsamouh.mgtapp.Users.Repositry.User_repo;
-
 import jakarta.transaction.Transactional;
 
 @Service
