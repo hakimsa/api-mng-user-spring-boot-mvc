@@ -5,12 +5,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-<<<<<<< HEAD
-import com.fasterxml.jackson.annotation.JsonProperty;
-=======
 import org.hibernate.annotations.DynamicUpdate;
->>>>>>> main
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -156,7 +151,7 @@ public class User  implements Serializable{
     String formacion;
     String lenguage;
     String redes;
-    @JsonProperty("favoritPrograming")
+
     private ArrayList<String> favoritPrograming=new ArrayList<String>();
      
 
