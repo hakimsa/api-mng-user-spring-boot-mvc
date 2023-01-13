@@ -34,13 +34,11 @@ public class UserService {
         }
         return user_repo.findById(idUser);
     }
-<<<<<<< HEAD
+
 
     public  String addNewUser(User user) {
-=======
-    @Transactional
-    public void addNewUser(User user) {
->>>>>>> main
+
+
 
         Optional<User> userEmail = user_repo.findUserByEmail(user.getEmail());
         if (userEmail.isPresent()) {
