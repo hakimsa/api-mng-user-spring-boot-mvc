@@ -20,7 +20,7 @@ import com.hakimsamouh.mgtapp.Users.Models.User;
 import com.hakimsamouh.mgtapp.Users.Services.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:36409")
 @RequestMapping(path = "/api/v1/users")
 public class UserController {
 

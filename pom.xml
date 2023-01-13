@@ -11,6 +11,7 @@
 	<groupId>com.hakimsamouh</groupId>
 	<artifactId>mgt-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>mgt-app</name>
 	<description>app to learns concept of spring boot 3.0.0</description>
 	<properties>
@@ -46,6 +47,7 @@
 	</dependencies>
 
 	<build>
+	<finalName>mgt-api</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
