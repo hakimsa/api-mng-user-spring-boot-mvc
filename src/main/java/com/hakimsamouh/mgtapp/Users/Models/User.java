@@ -5,7 +5,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonProperty;
+=======
+import org.hibernate.annotations.DynamicUpdate;
+>>>>>>> main
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,6 +19,7 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 @Entity
 @Table(name="Users")
+@DynamicUpdate
 public class User  implements Serializable{
     @Id
     @SequenceGenerator(
