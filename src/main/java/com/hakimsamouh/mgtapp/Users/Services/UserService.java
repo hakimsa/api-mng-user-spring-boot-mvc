@@ -35,7 +35,7 @@ public class UserService {
         return user_repo.findById(idUser);
     }
 
-
+    @Transactional
     public  String addNewUser(User user) {
 
 
