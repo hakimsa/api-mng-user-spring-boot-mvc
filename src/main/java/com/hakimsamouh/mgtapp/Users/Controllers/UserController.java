@@ -20,7 +20,7 @@ import com.hakimsamouh.mgtapp.Users.Models.User;
 import com.hakimsamouh.mgtapp.Users.Services.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:36409")
+@CrossOrigin(origins = {"http://localhost:4200","https://webapp-3oi9txy7r-hakimsa.vercel.app"})
 @RequestMapping(path = "/api/v1/users")
 public class UserController {
 

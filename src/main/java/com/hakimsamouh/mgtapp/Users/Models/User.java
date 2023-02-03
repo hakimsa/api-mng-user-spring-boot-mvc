@@ -4,12 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.annotations.DynamicUpdate;
-<<<<<<< HEAD
 
 import io.micrometer.common.lang.Nullable;
 import jakarta.persistence.Column;
-=======
->>>>>>> e98c6726992cc577d656b555f7c463b38ee5d1f1
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -67,12 +64,7 @@ public class User  implements Serializable{
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
-    public String getAvatar() {
-        return avatar;
-    }
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
+   
     public String getAddess() {
         return addess;
     }
@@ -157,23 +149,16 @@ public class User  implements Serializable{
     String lenguage;
     String redes;
 
-    private ArrayList<String> favoritPrograming=new ArrayList<String>();
      
 
     public long getId() {
         return id;
     }
-    public User(ArrayList<String> favoritPrograming) {
-        this.favoritPrograming = favoritPrograming;
-    }
+
     public void setId(long id) {
         this.id = id;
     }
 
-<<<<<<< HEAD
-    private String name;
-    private String email;
-    private String avatar;
     public String getAvatar() {
         return avatar;
     }
@@ -185,9 +170,6 @@ public class User  implements Serializable{
     @Nullable
     private ArrayList<String> favoritPrograming=new ArrayList<String>();
 
-    public User() {
-    }
-
     public User(long id,String name, String email,String avatar) {
         this.id=id;
         this.name = name;
@@ -195,16 +177,13 @@ public class User  implements Serializable{
         this.avatar=avatar;
     }
 
-    public User(@Nullable ArrayList<String> favoritPrograming) {
-=======
     public User() {
     }
 
     public User(long id, String name, String email, ArrayList<String> favoritPrograming) {
         this.id = id;
         this.name = name;
-        this.email = email;
->>>>>>> e98c6726992cc577d656b555f7c463b38ee5d1f1
+
         this.favoritPrograming = favoritPrograming;
     }
 
@@ -226,33 +205,24 @@ public class User  implements Serializable{
         this.email = email;
     }
 
-<<<<<<< HEAD
-    public void setFavoritPrograming(@Nullable ArrayList<String> favoritPrograming) {
-        this.favoritPrograming = favoritPrograming;
-=======
+
+
     public void setFavoritPrograming( ArrayList<String> favoritPrograming) {
         
        
             this.favoritPrograming = favoritPrograming;
         
->>>>>>> e98c6726992cc577d656b555f7c463b38ee5d1f1
     }
 
     public List<String> getFavoritPrograming() {
 
         if ((this.favoritPrograming.isEmpty()) || (this.favoritPrograming == null)) {
-<<<<<<< HEAD
             String message = "No hay lenguaje de programación favorito para  " + getName();
 
             this.favoritPrograming.add(message);
             return this.favoritPrograming;
-        } else {
-=======
-            String message = "There is no favorite programming language for " + getName();
-            this.favoritPrograming.add(message);
-            return this.favoritPrograming;
-            } else {
->>>>>>> e98c6726992cc577d656b555f7c463b38ee5d1f1
+         } else {
+
             return this.favoritPrograming;
         }
 
@@ -260,16 +230,14 @@ public class User  implements Serializable{
 
     @Override
     public String toString() {
-<<<<<<< HEAD
-        return "User [id=" + id + ", name=" + name + ", email=" + email + ", favoritPrograming=" + favoritPrograming
-                + "]";
-=======
+
+    
         return "User [id=" + id + ", name=" + name + ", email=" + email + ", firstname=" + firstname + ", lastname="
                 + lastname + ", avatar=" + avatar + ", addess=" + addess + ", age=" + age + ", description="
                 + description + ", nacion=" + nacion + ", role=" + role + ", telefon=" + telefon + ", token=" + token
                 + ", password=" + password + ", formacion=" + formacion + ", lenguage=" + lenguage + ", redes=" + redes
                 + ", favoritPrograming=" + favoritPrograming + "]";
->>>>>>> e98c6726992cc577d656b555f7c463b38ee5d1f1
+
     }
 
    
