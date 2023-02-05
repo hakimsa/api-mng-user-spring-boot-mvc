@@ -24,6 +24,6 @@ jobs:
         cache: maven
     - name: Build project with Maven
     - name: Clean project 
-      run: mvn clean -f pom.xml && mvn install -f pom.xml
+      run: mvn clean -f pom.xml
       
 
