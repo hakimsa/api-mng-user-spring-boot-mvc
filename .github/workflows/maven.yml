@@ -25,5 +25,4 @@ jobs:
     - name: Build project with Maven
     - name: Clean project 
       run: mvn clean -f pom.xml
-    - name: Install project
-      run: mvn install -f pom.xml
+
