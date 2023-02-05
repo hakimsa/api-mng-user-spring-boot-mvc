@@ -23,7 +23,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build project with Maven
-    - name: Clean project 
+    - name: Clean project
       run: mvn clean -f pom.xml
       
 
