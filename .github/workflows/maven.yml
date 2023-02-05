@@ -24,7 +24,10 @@ jobs:
         cache: maven
 
     - name: Clean project
+    
       run: mvn clean -f pom.xml
+    - name: update java to version 17
+      run: export JAVA_HOME=$(/usr/libexec/java_home -v 17)
     - name: install project
       run: pwd
     - name: version Java
