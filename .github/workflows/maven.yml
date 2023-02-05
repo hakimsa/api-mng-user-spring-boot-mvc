@@ -25,5 +25,7 @@ jobs:
 
     - name: Clean project
       run: mvn clean -f pom.xml
+    - name: install project
+      run: mvn install -f pom.xml
       
 
