@@ -6,11 +6,9 @@ import java.util.Objects;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.hakimsamouh.mgtapp.Users.Models.User;
 import com.hakimsamouh.mgtapp.Users.Repositry.User_repo;
-
+import jakarta.transaction.Transactional;
 
 @Service
 public class UserService {
