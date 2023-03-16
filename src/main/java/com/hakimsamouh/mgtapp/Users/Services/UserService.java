@@ -1,6 +1,4 @@
 package com.hakimsamouh.mgtapp.Users.Services;
-import java.util.ArrayList;
-
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -62,14 +60,15 @@ public class UserService {
     }
 
     @Transactional
-    public void  updateUser(Long idUser, String name, String email, ArrayList<String> favoritPrograming) {
+    public void  updateUser(Long idUser, String firstname, String avatar,String email, String adress,int age,String formacion,String redes,String roles,String lenguage,String nacion,String telefone,String token ,String lastname,String password,String description,List<String> favoritPrograming) {
 
         User user = user_repo.findById(idUser).orElseThrow(() -> new IllegalStateException("User with this id " + idUser + " does not existe"));
-                if (name != null && name.length() > 0 && !Objects.equals(user.getName(), name)) {
-                    user.setName(name);
+                if (firstname != null && firstname.length() > 0 && !Objects.equals(user.getFirstname(), firstname)) {
+                    user.setFirstname(firstname);
            
                 }
-        
+                user.setAvatar(avatar);
+                user.setAddess(adress);
                 
                     Optional<User> userEmail = user_repo.findUserByEmail(email);
               
@@ -88,8 +87,16 @@ public class UserService {
                  
                 }
                
+               
             }
+
+    public Optional<User> getUserByName(String userName) {
+       // boolean isExist = user_repo.existsByName(userName);
+      
+        return user_repo.findUserByName(userName);
+    }
+    }
 
        
 
-    }
+

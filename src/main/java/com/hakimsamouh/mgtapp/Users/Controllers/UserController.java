@@ -1,6 +1,4 @@
 package com.hakimsamouh.mgtapp.Users.Controllers;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,7 +18,8 @@ import com.hakimsamouh.mgtapp.Users.Models.User;
 import com.hakimsamouh.mgtapp.Users.Services.UserService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:36409")
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:39799"})
+
 @RequestMapping(path = "/api/v1/users")
 public class UserController {
 
@@ -46,6 +45,11 @@ public class UserController {
 		return userService.getUser(idUser);
 
 	}
+	@GetMapping(path = "by/{userName}")
+	public Optional<User> getUserByName(@PathVariable("userName")String userName) {
+		return userService.getUserByName(userName);
+
+	}
 
 	@PostMapping("/save")
 	public void registerNewUser(@RequestBody User user) {
@@ -65,6 +69,6 @@ public void updateUser(
 @PathVariable("UserId")Long idUser,
 @RequestBody User user)
 {
-userService.updateUser(idUser,user.getName(),user.getEmail(),(ArrayList<String>) user.getFavoritPrograming());
+userService.updateUser(idUser,user.getFirstname(),user.getLastname(),user.getAvatar(),user.getEmail(),user.getAge(),user.getFormacion(),user.getDescription(),user.getLenguage(),user.getAddess(),user.getRedes(),user.getRole(),user.getTelefon(),user.getToken(),user.getPassword(),user.getNacion(),user.getFavoritPrograming());
 }
 }
