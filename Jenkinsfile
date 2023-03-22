@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Run tests
-                sh ' echo path/to/script en agent '
+                sh ' echo path/to/script en agent develop '
                 
                 // Verify if tests passed or failed
                 script {
