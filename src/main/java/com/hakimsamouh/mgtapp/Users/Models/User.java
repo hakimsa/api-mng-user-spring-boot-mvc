@@ -12,18 +12,6 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicUpdate;
-<<<<<<< HEAD
-
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.Table;
-=======
-import org.springframework.lang.Nullable;
->>>>>>> fdf1b9e51eca66b42abe6fdfbac2f61780915ddc
 @Entity
 @Table(name="Users")
 @DynamicUpdate
@@ -138,12 +126,9 @@ public class User  implements Serializable{
     String formacion;
     String lenguage;
 
-<<<<<<< HEAD
     List<String> favoritPrograming= new ArrayList<String>();
      String redes;
     
-=======
->>>>>>> fdf1b9e51eca66b42abe6fdfbac2f61780915ddc
      
 
     public User(long id, String email, String firstname, String lastname, String avatar, String addess,
@@ -165,17 +150,13 @@ public class User  implements Serializable{
         this.password = password;
         this.formacion = formacion;
         this.lenguage = lenguage;
-        this.favoritPrograming = favoritPrograming;
+        this.favoritPrograming = (ArrayList<String>) favoritPrograming;
         this.redes = redes;
     }
     public long getId() {
         return id;
     }
-<<<<<<< HEAD
    
-=======
-
->>>>>>> fdf1b9e51eca66b42abe6fdfbac2f61780915ddc
     public void setId(long id) {
         this.id = id;
     }
@@ -188,12 +169,9 @@ public class User  implements Serializable{
         this.avatar = avatar;
     }
 
-    @Nullable
-    private ArrayList<String> favoritPrograming=new ArrayList<String>();
-
     public User(long id,String name, String email,String avatar) {
         this.id=id;
-        this.name = name;
+        this.firstname = name;
         this.email = email;
         this.avatar=avatar;
     }
@@ -201,17 +179,13 @@ public class User  implements Serializable{
     public User() {
     }
 
-<<<<<<< HEAD
- 
-=======
     public User(long id, String name, String email, ArrayList<String> favoritPrograming) {
         this.id = id;
-        this.name = name;
+        this.firstname = name;
 
         this.favoritPrograming = favoritPrograming;
     }
 
->>>>>>> fdf1b9e51eca66b42abe6fdfbac2f61780915ddc
    
 
 
@@ -226,21 +200,15 @@ public class User  implements Serializable{
         this.email = email;
     }
 
-<<<<<<< HEAD
     public void setFavoritPrograming( List<String> favoritPrograming) {
-=======
-
-
-    public void setFavoritPrograming( ArrayList<String> favoritPrograming) {
->>>>>>> fdf1b9e51eca66b42abe6fdfbac2f61780915ddc
         
        
         if ((this.favoritPrograming.isEmpty()) || (this.favoritPrograming == null)) {
             String message = "There is no favorite programming language for " + getFirstname();
             this.favoritPrograming.add(message);
-            this.favoritPrograming=favoritPrograming;
+            this.favoritPrograming=(ArrayList<String>) favoritPrograming;
             } else {
-            this.favoritPrograming=favoritPrograming;
+            this.favoritPrograming=(ArrayList<String>) favoritPrograming;
         }
 
         
@@ -249,12 +217,8 @@ public class User  implements Serializable{
     public List<String> getFavoritPrograming() {
 
         if ((this.favoritPrograming.isEmpty()) || (this.favoritPrograming == null)) {
-<<<<<<< HEAD
-            String message = "There is no favorite programming language for " + getFirstname();
-=======
-            String message = "No hay lenguaje de programación favorito para  " + getName();
+            String message = "No hay lenguaje de programación favorito para  " + getFirstname();
 
->>>>>>> fdf1b9e51eca66b42abe6fdfbac2f61780915ddc
             this.favoritPrograming.add(message);
             return this.favoritPrograming;
          } else {
@@ -266,13 +230,9 @@ public class User  implements Serializable{
 
     @Override
     public String toString() {
-<<<<<<< HEAD
-        return "User [id=" + id +  ", email=" + email + ", firstname=" + firstname + ", lastname="
-=======
 
     
-        return "User [id=" + id + ", name=" + name + ", email=" + email + ", firstname=" + firstname + ", lastname="
->>>>>>> fdf1b9e51eca66b42abe6fdfbac2f61780915ddc
+        return "User [id=" + id + ", name=" + firstname + ", email=" + email + ", firstname=" + firstname + ", lastname="
                 + lastname + ", avatar=" + avatar + ", addess=" + addess + ", age=" + age + ", description="
                 + description + ", nacion=" + nacion + ", role=" + role + ", telefon=" + telefon + ", token=" + token
                 + ", password=" + password + ", formacion=" + formacion + ", lenguage=" + lenguage + ", redes=" + redes
