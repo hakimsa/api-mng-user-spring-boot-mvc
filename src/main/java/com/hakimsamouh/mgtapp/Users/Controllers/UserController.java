@@ -1,6 +1,4 @@
 package com.hakimsamouh.mgtapp.Users.Controllers;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -65,6 +63,6 @@ public void updateUser(
 @PathVariable("UserId")Long idUser,
 @RequestBody User user)
 {
-userService.updateUser(idUser,user.getName(),user.getEmail(),(ArrayList<String>) user.getFavoritPrograming());
+userService.updateUser(idUser,user.getFirstname(),user.getEmail(),user.getFavoritPrograming());
 }
 }

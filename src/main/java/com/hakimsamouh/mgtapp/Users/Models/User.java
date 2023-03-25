@@ -10,9 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
 import org.hibernate.annotations.DynamicUpdate;
-import org.springframework.lang.Nullable;
 @Entity
 @Table(name="Users")
 @DynamicUpdate
@@ -30,11 +28,10 @@ public class User  implements Serializable{
     )  
      @Column
     private long id;
-    public User(long id, String name, String email, String firstname, String lastname, String avatar, String addess,
+    public User(long id, String email, String firstname, String lastname, String avatar, String addess,
             int age, String description, String nacion, String role, String telefon, String token, String password,
             String formacion, String lenguage, String redes, ArrayList<String> favoritPrograming) {
         this.id = id;
-        this.name = name;
         this.email = email;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -132,7 +129,7 @@ public class User  implements Serializable{
         this.redes = redes;
     }
 
-    private String name;
+
     private String email;
     String firstname;
     String lastname;
@@ -148,7 +145,7 @@ public class User  implements Serializable{
     String formacion;
     String lenguage;
     String redes;
-
+    private ArrayList<String> favoritPrograming;
      
 
     public long getId() {
@@ -167,12 +164,12 @@ public class User  implements Serializable{
         this.avatar = avatar;
     }
 
-    @Nullable
-    private ArrayList<String> favoritPrograming=new ArrayList<String>();
+    
+    
 
     public User(long id,String name, String email,String avatar) {
         this.id=id;
-        this.name = name;
+   
         this.email = email;
         this.avatar=avatar;
     }
@@ -182,24 +179,16 @@ public class User  implements Serializable{
 
     public User(long id, String name, String email, ArrayList<String> favoritPrograming) {
         this.id = id;
-        this.name = name;
-
         this.favoritPrograming = favoritPrograming;
     }
 
    
 
-    public String getName() {
-        return name;
-    }
 
     public String getEmail() {
         return email;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public void setEmail(String email) {
         this.email = email;
@@ -207,17 +196,17 @@ public class User  implements Serializable{
 
 
 
-    public void setFavoritPrograming( ArrayList<String> favoritPrograming) {
+    public void setFavoritPrograming( ArrayList<String> list) {
         
        
-            this.favoritPrograming = favoritPrograming;
+            this.favoritPrograming = list;
         
     }
 
-    public List<String> getFavoritPrograming() {
+    public ArrayList<String> getFavoritPrograming() {
 
         if ((this.favoritPrograming.isEmpty()) || (this.favoritPrograming == null)) {
-            String message = "No hay lenguaje de programación favorito para  " + getName();
+            String message = "No hay lenguaje de programación favorito para  " + getFirstname();
 
             this.favoritPrograming.add(message);
             return this.favoritPrograming;
@@ -232,7 +221,7 @@ public class User  implements Serializable{
     public String toString() {
 
     
-        return "User [id=" + id + ", name=" + name + ", email=" + email + ", firstname=" + firstname + ", lastname="
+        return "User [id=" + id +  ", email=" + email + ", firstname=" + firstname + ", lastname="
                 + lastname + ", avatar=" + avatar + ", addess=" + addess + ", age=" + age + ", description="
                 + description + ", nacion=" + nacion + ", role=" + role + ", telefon=" + telefon + ", token=" + token
                 + ", password=" + password + ", formacion=" + formacion + ", lenguage=" + lenguage + ", redes=" + redes

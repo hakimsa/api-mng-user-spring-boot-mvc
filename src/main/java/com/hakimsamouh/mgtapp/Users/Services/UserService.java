@@ -64,11 +64,11 @@ public class UserService {
     }
 
     @Transactional
-    public void  updateUser(Long idUser, String name, String email, ArrayList<String> favoritPrograming) {
+    public void  updateUser(Long idUser, String name, String email, ArrayList<String> list) {
 
         User user = user_repo.findById(idUser).orElseThrow(() -> new IllegalStateException("User with this id " + idUser + " does not existe"));
-                if (name != null && name.length() > 0 && !Objects.equals(user.getName(), name)) {
-                    user.setName(name);
+                if (name != null && name.length() > 0 && !Objects.equals(user.getFirstname(), name)) {
+                    user.setFirstname(name);
            
                 }
         
@@ -84,9 +84,9 @@ public class UserService {
                     
                     user.setEmail(email);
                 
-                if (favoritPrograming != null && favoritPrograming.size() > 0
-                        && !Objects.equals(user.getFavoritPrograming(), favoritPrograming)) {
-                    user.setFavoritPrograming(favoritPrograming);
+                if (list != null && list.size() > 0
+                        && !Objects.equals(user.getFavoritPrograming(), list)) {
+                    user.setFavoritPrograming(list);
                  
                 }
                
