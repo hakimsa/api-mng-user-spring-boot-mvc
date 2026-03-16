@@ -1,5 +1,7 @@
 @Library('jenkins-shared-lib@main') _
 
-echo "Shared library loaded"
-
-javaPipeline()
+javaPipeline(
+    appName: 'mgt-api',
+    javaEnv: 'development',
+    javaVersion: 'jdk-11'
+)
