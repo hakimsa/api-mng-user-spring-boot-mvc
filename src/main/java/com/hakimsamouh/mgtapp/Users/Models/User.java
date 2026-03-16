@@ -12,7 +12,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicUpdate;
-import org.springframework.lang.Nullable;
+
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 @Entity

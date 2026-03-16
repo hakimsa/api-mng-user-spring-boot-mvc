@@ -1,5 +1,5 @@
 @Library('jenkins-shared-lib@main') _
 
-println "Shared library loaded"
+echo "Shared library loaded"
 
 javaPipeline()
