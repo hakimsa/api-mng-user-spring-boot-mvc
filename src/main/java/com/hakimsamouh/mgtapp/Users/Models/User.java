@@ -1,20 +1,23 @@
 package com.hakimsamouh.mgtapp.Users.Models;
-
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.Table;
+import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.lang.Nullable;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 @Entity
 @Table(name="Users")
+@DynamicUpdate
 public class User  implements Serializable{
     @Id
     @SequenceGenerator(
@@ -26,7 +29,8 @@ public class User  implements Serializable{
         strategy = GenerationType.SEQUENCE,
         generator = "users_seq"
         
-    )
+    )  
+     @Column
     private long id;
     public User(long id, String name, String email, String firstname, String lastname, String avatar, String addess,
             int age, String description, String nacion, String role, String telefon, String token, String password,
