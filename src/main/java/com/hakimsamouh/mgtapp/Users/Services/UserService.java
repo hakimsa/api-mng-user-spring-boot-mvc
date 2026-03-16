@@ -1,5 +1,6 @@
 package com.hakimsamouh.mgtapp.Users.Services;
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -34,13 +35,15 @@ public class UserService {
         return user_repo.findById(idUser);
     }
 
-    public void addNewUser(User user) {
+    public  String addNewUser(User user) {
 
         Optional<User> userEmail = user_repo.findUserByEmail(user.getEmail());
         if (userEmail.isPresent()) {
             throw new IllegalStateException("Email already exists, you could choose another one");
+          
         }
         user_repo.save(user);
+       return "ok";
     }
 
     public void deleteUser(Long idUser) {
@@ -66,11 +69,15 @@ public class UserService {
         
                 
                     Optional<User> userEmail = user_repo.findUserByEmail(email);
-                    if (userEmail.isPresent()) {
-                        throw new IllegalStateException("User with this id  :" + email + " existe you could choose another");
+              
+                    if (userEmail.isPresent() ) {
+
+                      
+                        throw new IllegalStateException( "Sorry ,this email :"+ email + " existe,you could choose another");
                     }
+ 
+                    
                     user.setEmail(email);
-               
                 
                 if (favoritPrograming != null && favoritPrograming.size() > 0
                         && !Objects.equals(user.getFavoritPrograming(), favoritPrograming)) {
