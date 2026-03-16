@@ -1,4 +1,4 @@
-@Library('jenkins-shared-lib@hakim') _
+@Library('jenkins-shared-lib@main') _
 
 println "Shared library loaded"
 
