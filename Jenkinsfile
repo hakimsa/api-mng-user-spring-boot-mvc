@@ -1,5 +1,5 @@
 // Jenkinsfile
-@Library('jenkins-shared-lib@main') _
+@Library('jenkins-shared-lib@hakim') _
 javaPipeline(
     appName: 'mgt-api',
     javaEnv: 'developement',
